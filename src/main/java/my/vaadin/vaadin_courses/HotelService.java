@@ -146,7 +146,8 @@ public class HotelService {
 				h.setAddress(split[3]);
 				h.setCategory(HotelCategory.values()[r.nextInt(HotelCategory.values().length)]);
 				int daysOld = 0 - r.nextInt(365 * 30);
-				h.setOperatesFrom((LocalDate.now().plusDays(daysOld)));
+				//h.setOperatesFrom((LocalDate.now().plusDays(daysOld)));
+				h.setOperatesFrom((System.currentTimeMillis() - daysOld*24*3600));
 				save(h);
 			}
 		}

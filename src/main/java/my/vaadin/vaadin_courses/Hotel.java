@@ -1,7 +1,6 @@
 package my.vaadin.vaadin_courses;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @SuppressWarnings("serial")
 public class Hotel implements Serializable, Cloneable {
@@ -12,9 +11,9 @@ public class Hotel implements Serializable, Cloneable {
 
 	private String address = "";
 
-	private int rating;
+	private Integer rating;
 
-	private LocalDate operatesFrom;
+	private Long operatesFrom;
 
 	private HotelCategory category;
 	
@@ -73,19 +72,19 @@ public class Hotel implements Serializable, Cloneable {
 		this.address = address;
 	}
 
-	public int getRating() {
+	public Integer getRating() {
 		return rating;
 	}
 
-	public void setRating(int rating) {
+	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
 
-	public LocalDate getOperatesFrom() {
+	public Long getOperatesFrom() {
 		return operatesFrom;
 	}
 
-	public void setOperatesFrom(LocalDate operatesFrom) {
+	public void setOperatesFrom(Long operatesFrom) {
 		this.operatesFrom = operatesFrom;
 	}
 
@@ -102,8 +101,7 @@ public class Hotel implements Serializable, Cloneable {
 	}
 
 	public void setUrl(String url) {
-		this.url = "<a href=\""+ url + "\" target=\"_blank\"></a>";
-		//this.url = url;
+		this.url = url;
 	}
 
 	public String getDescription() {
@@ -114,7 +112,7 @@ public class Hotel implements Serializable, Cloneable {
 		this.description = description;
 	}
 
-	public Hotel(Long id, String name, String address, int rating, LocalDate operatesFrom, HotelCategory category, String url) {
+	public Hotel(Long id, String name, String address, Integer rating, Long operatesFrom, HotelCategory category, String url) {
 		super();
 		this.id = id;
 		this.name = name;
